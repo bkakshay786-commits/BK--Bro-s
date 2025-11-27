@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — BK BRO'S</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <img src="images/bk-logo.png" alt="BK Bro's logo" class="logo-img" />
+      <div>
+        <h1>BK BRO'S</h1>
+        <div style="font-size:13px;color:#475569">About</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="booking.html">Booking</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="section">
+    <h2>About BK BRO'S</h2>
+    <p class="lead">Founded by BK Brothers, BK BRO'S helps travelers move from dreaming to doing. We focus on meaningful experiences, local partners, and stress-free logistics.</p>
+
+    <div style="margin-top:18px" class="cards">
+      <div class="card">
+        <h4>Why travel with us?</h4>
+        <p>Personalized service, vetted local guides, 24/7 support while you're away, and itineraries that adapt to you.</p>
+      </div>
+      <div class="card">
+        <h4>Trusted Partners</h4>
+        <p>We work with local hotels, guides, and sustainable operators to provide authentic experiences.</p>
+      </div>
+    </div>
+
+    <section style="margin-top:18px">
+      <div class="founder">
+        <div class="meta">
+          <div class="avatar">BK</div>
+          <div>
+            <h4>BK Brothers</h4>
+            <div style="color:var(--muted);font-size:14px">Founder &amp; Head of Journeys</div>
+          </div>
+        </div>
+        <div class="contact-list">
+          <p><strong>Phone:</strong> <a href="tel:+918310182882">+91 83101 82882</a></p>
+          <p><strong>Email:</strong> <a href="mailto:bkakshay36@gmail.com">bkakshay36@gmail.com</a></p>
+          <p><strong>Office:</strong> 12 Travel Lane, Explorer City</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div>© <strong>BK BRO'S</strong></div>
+  </footer>
+  <script>
+  (function(){
+    function makeFallbackSVG(){
+      return '<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" role="img" aria-label="BK Bro\'s logo">'
+        + '<rect rx="12" width="56" height="56" fill="#0b7285"/>'
+        + '<text x="50%" y="58%" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">BK</text>'
+        + '</svg>';
+    }
+    function replaceWithFallback(img){
+      try{var span = document.createElement('div');span.className='logo-fallback';span.innerHTML=makeFallbackSVG();img.parentNode.replaceChild(span,img);}catch(e){}
+    }
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.logo-img').forEach(function(img){if(!img.complete||img.naturalWidth===0)replaceWithFallback(img);img.addEventListener('error',function(){replaceWithFallback(img)});});
+    });
+  })();
+  </script>
+</body>
+</html>

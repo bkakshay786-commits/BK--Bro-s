@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — BK BRO'S</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <img src="images/bk-logo.png" alt="BK Bro's logo" class="logo-img" />
+      <div>
+        <h1>BK BRO'S</h1>
+        <div style="font-size:13px;color:#475569">Contact</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="booking.html">Booking</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="section">
+    <h2>Contact BK BRO'S</h2>
+    <p class="lead">Get in touch — fill out the form or use the direct contact details on the right.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px">
+      <div class="contact-form">
+        <form action="mailto:bkakshay36@gmail.com" method="post" enctype="text/plain">
+          <label for="c-name">Your name</label>
+          <input id="c-name" name="name" placeholder="Full name" required>
+
+          <label for="c-email">Email</label>
+          <input id="c-email" name="email" type="email" placeholder="you@example.com" required>
+
+          <label for="c-message">Message</label>
+          <textarea id="c-message" name="message" rows="5" placeholder="How can we help?"></textarea>
+
+          <button type="submit">Send inquiry</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h4>Direct contact</h4>
+        <p><strong>Phone</strong>: <a href="tel:+918310182882">+91 83101 82882</a></p>
+        <p><strong>Email</strong>: <a href="mailto:bkakshay36@gmail.com">bkakshay36@gmail.com</a></p>
+        <p style="margin-top:12px">Office: 12 Travel Lane, Explorer City</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div>© <strong>BK BRO'S</strong></div>
+  </footer>
+  <script>
+  (function(){
+    function makeFallbackSVG(){
+      return '<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" role="img" aria-label="BK Bro\'s logo">'
+        + '<rect rx="12" width="56" height="56" fill="#0b7285"/>'
+        + '<text x="50%" y="58%" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">BK</text>'
+        + '</svg>';
+    }
+    function replaceWithFallback(img){
+      try{var span=document.createElement('div');span.className='logo-fallback';span.innerHTML=makeFallbackSVG();img.parentNode.replaceChild(span,img);}catch(e){}
+    }
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.logo-img').forEach(function(img){if(!img.complete||img.naturalWidth===0)replaceWithFallback(img);img.addEventListener('error',function(){replaceWithFallback(img)});});
+    });
+  })();
+  </script>
+</body>
+</html>

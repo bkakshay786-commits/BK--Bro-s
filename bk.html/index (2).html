@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="BK BRO'S Travel Agency — curated adventures, tailored trips, and expert planning by BK Brothers.">
+    <title>BK BRO'S Travel Agency</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="brand">
+            <div>
+                <img src="images/bk-logo.png" alt="BK Bro's logo" class="logo-img" />
+            </div>
+            <div>
+                <h1>BK BRO'S</h1>
+                <div style="font-size:13px;color:#475569">Curated travel &amp; unforgettable journeys</div>
+            </div>
+        </div>
+        <nav class="nav" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="#services">Services</a>
+            <a href="about.html">About</a>
+            <a href="booking.html">Booking</a>
+            <a class="cta" href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="intro fade-in">
+                <h2>Explore the world with BK BRO'S</h2>
+                <p>We plan hassle-free trips for adventurers, families, and businesses. From weekend escapes to long-haul explorations — travel made personal.</p>
+                <div class="actions">
+                    <a class="btn btn-primary" href="contact.html">Plan your trip</a>
+                    <a class="btn btn-ghost" href="#services">See services</a>
+                </div>
+            </div>
+            <aside class="panel">
+                <h3>Quick Picks</h3>
+                <p>Popular: Bali escapes · Swiss Alps · Moroccan highlights — ask BK BRO'S for tailored dates & pricing.</p>
+            </aside>
+        </section>
+
+        <section id="services" class="section">
+            <h3 style="margin-bottom:14px">Our Services</h3>
+            <div class="cards">
+                <div class="card">
+                    <h4>Custom Itineraries</h4>
+                    <p>Hand-crafted day-by-day plans for the pace you want — flexible and fully supported.</p>
+                </div>
+                <div class="card">
+                    <h4>Group Travel</h4>
+                    <p>From corporate retreats to family reunions, we organize logistics and experiences for groups.</p>
+                </div>
+                <div class="card">
+                    <h4>Flight &amp; Hotel Bookings</h4>
+                    <p>Competitive rates and best-match options with quick support for changes and add-ons.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="karnataka" class="gallery">
+            <h3>Discover Karnataka</h3>
+            <p style="color:var(--muted);margin-bottom:12px">A small selection of beautiful places in Karnataka — Hampi, Mysore Palace, Coorg, Jog Falls and Gokarna.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/karnataka-hampi.jpg" alt="Hampi ruins" onerror="this.onerror=null;this.src='https://source.unsplash.com/800x600/?hampi'">
+                    <div class="gallery-caption">Hampi</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/karnataka-mysore.jpg" alt="Mysore Palace" onerror="this.onerror=null;this.src='https://source.unsplash.com/800x600/?mysore-palace'">
+                    <div class="gallery-caption">Mysore Palace</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/karnataka-coorg.jpg" alt="Coorg hills" onerror="this.onerror=null;this.src='https://source.unsplash.com/800x600/?coorg'">
+                    <div class="gallery-caption">Coorg</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/karnataka-jogfalls.jpg" alt="Jog Falls" onerror="this.onerror=null;this.src='https://source.unsplash.com/800x600/?jogfalls'">
+                    <div class="gallery-caption">Jog Falls</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/karnataka-gokarna.jpg" alt="Gokarna beach" onerror="this.onerror=null;this.src='https://source.unsplash.com/800x600/?gokarna'">
+                    <div class="gallery-caption">Gokarna</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/karnataka-belur.jpg" alt="Belur Halebidu temples" onerror="this.onerror=null;this.src='https://source.unsplash.com/800x600/?belur-halebidu'">
+                    <div class="gallery-caption">Belur &amp; Halebidu</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+                <div>
+                    <h3>About BK BRO'S</h3>
+                    <p class="lead">Founded by BK Brothers, BK BRO'S helps travelers move from dreaming to doing. We focus on meaningful experiences, local partners, and stress-free logistics.</p>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center">
+                    <a class="btn" href="about.html">Read more</a>
+                    <a class="btn btn-primary" href="contact.html">Contact us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>© <strong>BK BRO'S</strong> — Travel thoughtfully. All rights reserved.</div>
+    </footer>
+    <script>
+    (function(){
+        function makeFallbackSVG(){
+            return '<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" role="img" aria-label="BK Bro\'s logo">'
+                + '<rect rx="12" width="56" height="56" fill="#0b7285"/>'
+                + '<text x="50%" y="58%" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">BK</text>'
+                + '</svg>';
+        }
+        function replaceWithFallback(img){
+            try{
+                var span = document.createElement('div');
+                span.className = 'logo-fallback';
+                span.innerHTML = makeFallbackSVG();
+                img.parentNode.replaceChild(span, img);
+            }catch(e){ /* silent */ }
+        }
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelectorAll('.logo-img').forEach(function(img){
+                if(!img.complete || img.naturalWidth === 0){ replaceWithFallback(img); }
+                img.addEventListener('error', function(){ replaceWithFallback(img); });
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

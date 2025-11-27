@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Booking — BK BRO'S</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <img src="images/bk-logo.png" alt="BK Bro's logo" class="logo-img" />
+      <div>
+        <h1>BK BRO'S</h1>
+        <div style="font-size:13px;color:#475569">Booking</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="booking.html">Booking</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="section">
+    <h2>Book your trip</h2>
+    <p class="lead">Fill out the form below and BK Brothers will get back to you with a tailored plan and pricing options.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:18px">
+      <div class="contact-form booking-form">
+        <form id="bookingForm" onsubmit="return sendBooking(event)">
+          <label for="b-name">Full name</label>
+          <input id="b-name" name="name" required>
+
+          <label for="b-email">Email</label>
+          <input id="b-email" name="email" type="email" required>
+
+          <label for="b-phone">Phone</label>
+          <input id="b-phone" name="phone" type="tel" placeholder="+91 83101 82882">
+
+          <label for="b-destination">Destination</label>
+          <input id="b-destination" name="destination" placeholder="e.g., Bali, Swiss Alps" required>
+
+          <div style="display:flex;gap:10px">
+            <div style="flex:1">
+              <label for="b-depart">Departure</label>
+              <input id="b-depart" name="depart" type="date">
+            </div>
+            <div style="flex:1">
+              <label for="b-return">Return</label>
+              <input id="b-return" name="return" type="date">
+            </div>
+          </div>
+
+          <label for="b-travelers">Travelers</label>
+          <input id="b-travelers" name="travelers" type="number" min="1" value="2">
+
+          <label for="b-type">Travel type</label>
+          <select id="b-type" name="type">
+            <option>Leisure</option>
+            <option>Honeymoon</option>
+            <option>Family</option>
+            <option>Business</option>
+            <option>Adventure</option>
+          </select>
+
+          <label for="b-budget">Approx. budget (per person)</label>
+          <select id="b-budget" name="budget">
+            <option>Under ₹40,000</option>
+            <option>₹40,000 - ₹1,20,000</option>
+            <option>₹1,20,000 - ₹2,50,000</option>
+            <option>₹2,50,000+</option>
+          </select>
+
+          <label for="b-message">Notes / preferences</label>
+          <textarea id="b-message" name="message" rows="4" placeholder="Anything else we should know?"></textarea>
+
+          <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+            <button class="btn btn-primary" type="submit">Send booking request</button>
+            <button type="button" class="btn btn-ghost" onclick="requestCallback()">Request callback</button>
+          </div>
+
+          <div id="bookingResult" style="margin-top:12px;color:var(--muted)"></div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h4>Need help now?</h4>
+        <p>Call BK Brothers for fast assistance:</p>
+        <p style="margin-top:12px"><strong>Phone</strong>: <a id="phoneLink" href="tel:+918310182882">+91 83101 82882</a></p>
+        <p><strong>Email</strong>: <a href="mailto:bkakshay36@gmail.com">bkakshay36@gmail.com</a></p>
+        <p style="margin-top:12px">After you submit the booking request the email client will open pre-filled. If it doesn't, copy and paste the details or contact us directly.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div>© <strong>BK BRO'S</strong></div>
+  </footer>
+  <script>
+function sendBooking(e){
+  e.preventDefault();
+  const f = document.getElementById('bookingForm');
+  const data = {
+    name: f['name'].value.trim(),
+    email: f['email'].value.trim(),
+    phone: f['phone'].value.trim(),
+    destination: f['destination'].value.trim(),
+    depart: f['depart'].value,
+    ret: f['return'].value,
+    travelers: f['travelers'].value,
+    type: f['type'].value,
+    budget: f['budget'].value,
+    message: f['message'].value.trim()
+  };
+  // construct email
+  const to = 'bkakshay36@gmail.com';
+  const subject = `Booking Request: ${data.destination || 'unspecified'}`;
+  const body = `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nDestination: ${data.destination}\nDeparture: ${data.depart}\nReturn: ${data.ret}\nTravelers: ${data.travelers}\nType: ${data.type}\nBudget: ${data.budget}\nNotes:\n${data.message}`;
+  const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  // open user's mail client
+  window.location.href = mailto;
+  const result = document.getElementById('bookingResult');
+  result.textContent = 'Opening your email client to send the request. If it does not open, please email bkakshay36@gmail.com with the details above.';
+  return false;
+}
+
+function requestCallback(){
+  // show phone prominently and create tel link
+  const phone = '+918310182882';
+  const link = document.getElementById('phoneLink');
+  link.href = `tel:${phone}`;
+  link.textContent = phone;
+  alert('We will call you shortly. Or call us now at ' + phone);
+}
+</script>
+  <script>
+  (function(){
+    function makeFallbackSVG(){
+      return '<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" role="img" aria-label="BK Bro\'s logo">'
+        + '<rect rx="12" width="56" height="56" fill="#0b7285"/>'
+        + '<text x="50%" y="58%" font-family="Inter,Arial,Helvetica,sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">BK</text>'
+        + '</svg>';
+    }
+    function replaceWithFallback(img){
+      try{
+        var span = document.createElement('div');
+        span.className = 'logo-fallback';
+        span.innerHTML = makeFallbackSVG();
+        img.parentNode.replaceChild(span, img);
+      }catch(e){ }
+    }
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.logo-img').forEach(function(img){
+        if(!img.complete || img.naturalWidth === 0){ replaceWithFallback(img); }
+        img.addEventListener('error', function(){ replaceWithFallback(img); });
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
